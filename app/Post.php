@@ -9,10 +9,15 @@ class Post extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['title', 'content','user_id'];
 
     function featureImage()
     {
         return $this->hasOne('App\FeatureImages');
+    }
+
+    function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

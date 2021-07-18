@@ -20,4 +20,8 @@ Route::get('/', function () {
 Route::get('post/', 'PostController@read');
 Route::get('post/delete/{id}', 'PostController@del');
 Route::get('post/add', 'PostController@add');
+Route::get('post/show/{id}', 'PostController@show');
 Route::get('post/show_trashed', 'PostController@showOnlyTrashed');
+
+Route::get('user/add', 'UserController@add');
+Route::get('user/show/{id}', 'UserController@show');

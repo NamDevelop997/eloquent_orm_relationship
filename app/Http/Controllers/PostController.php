@@ -12,8 +12,8 @@ class PostController extends Controller
     {
         $img = FeatureImages::find(2)
             ->post;
-            // ->get();
-       return $img;
+        // ->get();
+        return $img;
     }
 
     function del($id)
@@ -28,11 +28,21 @@ class PostController extends Controller
     }
     function add()
     {
-        return Post::create(
+        Post::create(
             [
-                'title' => 'title 2',
-                'content' => 'content 2',
+                'title' => 'title 3',
+                'content' => 'content 3',
+                'user_id' => 15
             ]
         );
+    }
+
+    function show($id)
+    {
+        $user =  Post::find($id)
+            ->user;
+
+        // print_r($pos
+        echo $user;
     }
 }
